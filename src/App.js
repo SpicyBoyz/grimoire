@@ -79,6 +79,7 @@ class App extends Component {
         };
 
         this.addPlayer = this.addPlayer.bind(this);
+        this.loadPlayers = this.loadPlayers.bind(this);
     }
 
     addPlayer(player) {
@@ -89,6 +90,21 @@ class App extends Component {
 
     loadPlayers(event) {
         // Loads a set of players based on button click
+        const target = event.target;
+        let players = [];
+
+        // Reading button text seems inefficient
+        if (target.innerText === 'Spicy Boyz') {
+            players = spicyBoyz;
+        } else if (target.innerText === "Deacon's Decoys") {
+            players = deaconsDecoys;
+        } else {
+            players = [];
+        }
+
+        this.setState({
+            players: players,
+        });
     }
 
     render() {
@@ -105,9 +121,21 @@ class App extends Component {
                         <div className="quick-select">
                             <h2>Quick Select</h2>
                             <div className="buttons">
-                                <button>Clear all</button>
-                                <button>Spicy Boyz</button>
-                                <button>Deacon's Decoys</button>
+                                <button onClick={this.loadPlayers}>
+                                    Clear all
+                                </button>
+                                <button
+                                    onClick={this.loadPlayers}
+                                    value={spicyBoyz}
+                                >
+                                    Spicy Boyz
+                                </button>
+                                <button
+                                    onClick={this.loadPlayers}
+                                    value={deaconsDecoys}
+                                >
+                                    Deacon's Decoys
+                                </button>
                             </div>
                         </div>
                     </div>
