@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './reset.css';
+import './fonts/stylesheet.css';
 import './App.css';
 
 import List from './components/List/List';
@@ -111,6 +112,9 @@ class App extends Component {
     render() {
         return (
             <div className="App">
+                <div className="title">
+                    <h1>Grimoire</h1>
+                </div>
                 <div className="container">
                     <div className="column">
                         <h1>Initiative</h1>

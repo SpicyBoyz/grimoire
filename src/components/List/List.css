@@ -1,7 +1,5 @@
 .player-item {
-    background: #fff;
-    background-image: url(../../img/natural_paper.png);
-    background-repeat: repeat;
+    background: rgba(255, 255, 255, 1);
     margin-bottom: 15px;
     margin-right: 15px;
     padding: 15px;
@@ -10,8 +8,7 @@
 }
 
 .player-name {
-    font-size: 1.2em;
+    font-size: 1.5em;
     font-weight: bold;
-    font-family: 'Metamorphous', cursive;
     margin-bottom: 7px;
 }
