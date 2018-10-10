@@ -74,7 +74,9 @@ class Form extends React.Component {
 
                     <CirclePicker onChange={this.handleColorChange} />
                 </form>
-                <button onClick={this.handleClick}>Add</button>
+                <button className="submit" onClick={this.handleClick}>
+                    Add
+                </button>
             </div>
         );
     }

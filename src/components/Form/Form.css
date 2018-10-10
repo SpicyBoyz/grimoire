@@ -27,7 +27,7 @@ input {
     padding-bottom: 15px;
 }
 
-button {
+.submit {
     outline: 0;
     background: #4caf50;
     width: 100%;
