@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './reset.css';
 import './App.css';
 
 import List from './components/List/List';
@@ -118,6 +119,7 @@ class App extends Component {
                     <div className="column">
                         <h1>Add Character</h1>
                         <Form addPlayer={this.addPlayer} />
+
                         <div className="quick-select">
                             <h2>Quick Select</h2>
                             <div className="buttons">
