@@ -5,6 +5,8 @@ html {
 
 body {
     background: #eee;
+    background-image: url(./img/black_paper.png);
+    background-repeat: repeat;
 }
 
 h1 {
@@ -12,7 +14,8 @@ h1 {
     font-weight: bold;
     line-height: 0.5em;
     margin: 0.8em 0;
-    color: rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    font-family: 'Metamorphous', cursive;
 }
 
 h2 {
@@ -20,6 +23,7 @@ h2 {
     font-weight: bold;
     margin-bottom: 0.5em;
     color: rgba(0, 0, 0, 0.3);
+    font-family: 'Metamorphous', cursive;
 }
 
 .container {
