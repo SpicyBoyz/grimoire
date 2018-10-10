@@ -63,6 +63,14 @@ class App extends Component {
                     <div className="column">
                         <h1>Add Character</h1>
                         <Form addPlayer={this.addPlayer} />
+                        <div className="quick-select">
+                            <h2>Quick Select</h2>
+                            <div className="buttons">
+                                <button>Clear all</button>
+                                <button>Spicy Boyz</button>
+                                <button>Deacon's Decoys</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

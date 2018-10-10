@@ -7,6 +7,12 @@ body {
     background: #eee;
 }
 
+h1 {
+    font-size: 2em;
+    line-height: 0.5em;
+    color: rgba(0, 0, 0, 0.3);
+}
+
 .container {
     width: 70%;
     max-width: 960px;
@@ -21,8 +27,26 @@ body {
     flex: 1;
 }
 
-h1 {
-    font-size: 2em;
-    line-height: 0.5em;
-    color: rgba(0, 0, 0, 0.3);
+.quick-select {
+    margin-bottom: 15px;
+    padding: 15px;
+    background: #ffffff;
+    border-radius: 4px;
+}
+
+.buttons {
+    display: flex;
+}
+
+.buttons button {
+    background: #4caf50;
+    outline: 0;
+    border: 0;
+    border-radius: 4px;
+    padding: 10px;
+    margin-right: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
 }
