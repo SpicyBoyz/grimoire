@@ -41,34 +41,34 @@ const spicyBoyz = [
 
 const deaconsDecoys = [
   {
-    color: 'rgb(148, 0, 211)',
     title: 'Eyrin',
     text: 'Elf Bard',
+    initiative: 3,
   },
   {
-    color: 'rgb(95, 194, 150)',
     title: 'Click',
     text: 'Kenku Cleric',
+    initiative: 1,
   },
   {
-    color: 'rgb(63, 81, 181)',
     title: 'Höf Dawndew',
     text: 'Half-Elf Monk',
+    initiative: 4,
   },
   {
-    color: 'rgb(240, 93, 5)',
     title: 'Har Dawndew',
     text: 'Half-Orc Barbarian',
+    initiative: 0,
   },
   {
-    color: 'rgb(255, 170, 0)',
     title: 'Trix',
     text: 'Tiefling Warlock',
+    initiative: 1,
   },
   {
-    color: 'rgb(0, 188, 212)',
     title: 'Fold',
     text: 'Human Warlock',
+    initiative: 1,
   },
 ];
 

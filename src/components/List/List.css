@@ -17,3 +17,7 @@
 .player-title {
   color: #5f6061;
 }
+
+.player-initiative {
+  float: right;
+}

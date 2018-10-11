@@ -6,32 +6,32 @@ class List extends React.Component {
   constructor(props) {
     super(props);
 
-    console.log(this.props.players);
+    this.sortPlayers = this.sortPlayers.bind(this);
   }
+  sortPlayers() {
+    // sort by value
+    let initiativeOrderArray = this.props.players.sort(function(a, b) {
+      return a.initiative - b.initiative;
+    });
 
-  _handleUpdate = (evt, updated) => {
-    console.log(evt); // tslint:disable-line
-    console.log(updated); // tslint:disable-line
-    // this.setState({
-    //   dataSource: [...updated, {
-    //     color: '#FFAA00',
-    //     title: 'Added Engineer',
-    //     text: 'Added Engineer',
-    //   }]
-    // })
-  };
+    this.setState({
+      deaconsDecoys: initiativeOrderArray.reverse(),
+    });
+  }
 
   render() {
     return (
-      <div className="simple">
+      <div>
         {this.props.players.map(function(record, index) {
           return (
             <div className="player-item" key={index}>
               <div className="player-name">{record.title}</div>
               <span className="player-title">{record.text}</span>
+              <span className="player-initiative">{record.initiative}</span>
             </div>
           );
         })}
+        <button onClick={this.sortPlayers}>Sort</button>
       </div>
     );
   }
