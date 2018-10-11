@@ -27,7 +27,11 @@ class List extends React.Component {
             <div className="player-item" key={index}>
               <div className="player-name">{record.title}</div>
               <span className="player-title">{record.text}</span>
-              <span className="player-initiative">{record.initiative}</span>
+              <input
+                className="player-initiative"
+                type="text"
+                placeholder={record.initiative}
+              />
             </div>
           );
         })}

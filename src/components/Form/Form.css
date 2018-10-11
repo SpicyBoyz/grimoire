@@ -1,41 +1,41 @@
 .form {
-    margin-bottom: 15px;
-    padding: 15px;
-    background: #ffffff;
-    border-radius: 4px;
+  margin-bottom: 15px;
+  padding: 15px;
+  background: #ffffff;
+  border-radius: 4px;
 }
 
 label {
-    display: block;
-    margin-bottom: 15px;
+  display: block;
+  margin-bottom: 15px;
 }
 
 input {
-    outline: 0;
-    background: #f2f2f2;
-    width: 100%;
-    border: 0;
-    border-radius: 4px;
-    margin: 0 0 15px;
-    padding: 15px;
-    box-sizing: border-box;
-    font-size: 16px;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  border-radius: 4px;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 16px;
 }
 
 .circle-picker {
-    margin: 5px;
-    padding-bottom: 15px;
+  margin: 5px;
+  padding-bottom: 15px;
 }
 
 .submit {
-    outline: 0;
-    background: #4caf50;
-    width: 100%;
-    border: 0;
-    border-radius: 4px;
-    padding: 15px;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #ffffff;
-    cursor: pointer;
+  outline: 0;
+  background: #4caf50;
+  width: 100%;
+  border: 0;
+  border-radius: 4px;
+  padding: 15px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
 }
