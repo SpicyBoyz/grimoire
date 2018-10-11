@@ -1,11 +1,14 @@
 import React from 'react';
 
-import ReactDragList from 'react-drag-list';
-import 'react-drag-list/assets/index.css';
-
 import './List.css';
 
 class List extends React.Component {
+  constructor(props) {
+    super(props);
+
+    console.log(this.props.players);
+  }
+
   _handleUpdate = (evt, updated) => {
     console.log(evt); // tslint:disable-line
     console.log(updated); // tslint:disable-line
@@ -21,20 +24,14 @@ class List extends React.Component {
   render() {
     return (
       <div className="simple">
-        <ReactDragList
-          dataSource={this.props.players}
-          rowKey="title"
-          row={(record, index) => (
-            <div key={index}>
+        {this.props.players.map(function(record, index) {
+          return (
+            <div className="player-item" key={index}>
               <div className="player-name">{record.title}</div>
               <span className="player-title">{record.text}</span>
             </div>
-          )}
-          handles={false}
-          className="player-list"
-          rowClassName="player-item"
-          onUpdate={this._handleUpdate}
-        />
+          );
+        })}
       </div>
     );
   }
