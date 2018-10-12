@@ -8,6 +8,7 @@ class List extends React.Component {
 
     this.sortPlayers = this.sortPlayers.bind(this);
   }
+
   sortPlayers() {
     // sort by value
     let initiativeOrderArray = this.props.players.sort(function(a, b) {
@@ -22,19 +23,19 @@ class List extends React.Component {
   render() {
     return (
       <div>
-        {this.props.players.map(function(record, index) {
-          return (
-            <div className="player-item" key={index}>
-              <div className="player-name">{record.title}</div>
-              <span className="player-title">{record.text}</span>
-              <input
-                className="player-initiative"
-                type="text"
-                placeholder={record.initiative}
-              />
-            </div>
-          );
-        })}
+        {this.props.players.map((record, index) => (
+          <div className="player-item" key={index}>
+            <div className="player-name">{record.title}</div>
+            <span className="player-title">{record.text}</span>
+            <input
+              className="player-initiative"
+              type="text"
+              placeholder={record.initiative}
+              // Change to update the player object initative and sort
+              onBlur={this.sortPlayers}
+            />
+          </div>
+        ))}
         <button onClick={this.sortPlayers}>Sort</button>
       </div>
     );
