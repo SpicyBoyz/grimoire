@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 import './List.css';
 
@@ -11,8 +12,14 @@ class List extends React.Component {
     }
 
     handleInitiativeChange(event, player) {
-        this.props.handleInitiativeChange(event.target.value, player);
+        let initiative = event.target.value;
+        if (initiative === '') {
+            return;
+        }
+
+        this.props.handleInitiativeChange(initiative, player);
         this.sortPlayers();
+        // Find a way to reset the form values
     }
 
     sortPlayers() {
@@ -37,6 +44,7 @@ class List extends React.Component {
                             className="player-initiative"
                             type="text"
                             placeholder={player.initiative}
+                            defaultValue=""
                             onBlur={event =>
                                 this.handleInitiativeChange(event, player)
                             }
