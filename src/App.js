@@ -111,7 +111,15 @@ class App extends Component {
     }
 
     updateInitiative(initiative, player) {
-        // How do we pass the initiative value to the proper player object
+        console.log('Set ' + player.title + ' initiative to ' + initiative);
+        player.initiative = initiative;
+        const playerStateIndex = this.state.players.find(
+            item => item.title === player.title,
+        );
+
+        this.setState({
+            playerStateIndex: player,
+        });
     }
 
     render() {
