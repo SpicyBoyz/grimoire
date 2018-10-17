@@ -6,8 +6,6 @@ import './List.css';
 class List extends React.Component {
   constructor(props) {
     super(props);
-
-    this.sortPlayers = this.sortPlayers.bind(this);
     this.handleInitiativeChange = this.handleInitiativeChange.bind(this);
   }
 
@@ -16,17 +14,6 @@ class List extends React.Component {
 
     this.props.handleInitiativeChange(initiative, player);
     event.preventDefault();
-  }
-
-  sortPlayers() {
-    // sort by value
-    let initiativeOrderArray = this.props.players.sort(function(a, b) {
-      return a.initiative - b.initiative;
-    });
-
-    this.setState({
-      deaconsDecoys: initiativeOrderArray.reverse(),
-    });
   }
 
   render() {
@@ -47,7 +34,7 @@ class List extends React.Component {
             </form>
           </div>
         ))}
-        <button onClick={this.sortPlayers}>Sort</button>
+        <button onClick={this.props.handleSort}>Sort</button>
       </div>
     );
   }

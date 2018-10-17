@@ -88,6 +88,7 @@ class App extends Component {
 
     this.addPlayer = this.addPlayer.bind(this);
     this.loadPlayers = this.loadPlayers.bind(this);
+    this.sortPlayers = this.sortPlayers.bind(this);
     this.updateInitiative = this.updateInitiative.bind(this);
   }
 
@@ -116,16 +117,32 @@ class App extends Component {
     });
   }
 
-  updateInitiative(initiative, player) {
-    console.log('Set ' + player.title + ' initiative to ' + initiative);
-    player.initiative = initiative;
-    const playerStateIndex = this.state.players.find(
-      item => item.title === player.title,
-    );
+  sortPlayers() {
+    // sort by value
+    let initiativeOrderArray = this.state.players.concat().sort(function(a, b) {
+      return b.initiative - a.initiative;
+    });
 
     this.setState({
-      playerStateIndex: player,
+      players: initiativeOrderArray,
     });
+  }
+
+  updateInitiative(initiative, player) {
+    console.log('Set ' + player.title + ' initiative to ' + initiative);
+
+    // Map the player array
+    const players = this.state.players.map(item => {
+      // If the item is the passed in player
+      if (item.title === player.title) {
+        // Update their initiative value
+        item.initiative = Number(initiative);
+      }
+      // Otherwise return as is
+      return item;
+    });
+
+    this.setState({ players });
   }
 
   render() {
@@ -139,6 +156,7 @@ class App extends Component {
             <h1>Initiative</h1>
             <List
               players={this.state.players}
+              handleSort={this.sortPlayers}
               handleInitiativeChange={this.updateInitiative}
             />
           </div>
