@@ -41,34 +41,40 @@ const spicyBoyz = [
 
 const deaconsDecoys = [
   {
-    color: 'rgb(148, 0, 211)',
     title: 'Eyrin',
     text: 'Elf Bard',
+    initiative: 0,
+    dexterity: '+3',
   },
   {
-    color: 'rgb(95, 194, 150)',
     title: 'Click',
     text: 'Kenku Cleric',
+    initiative: 0,
+    dexterity: '+1',
   },
   {
-    color: 'rgb(63, 81, 181)',
     title: 'Höf Dawndew',
     text: 'Half-Elf Monk',
+    initiative: 0,
+    dexterity: '+3',
   },
   {
-    color: 'rgb(240, 93, 5)',
     title: 'Har Dawndew',
     text: 'Half-Orc Barbarian',
+    initiative: 0,
+    dexterity: '+0',
   },
   {
-    color: 'rgb(255, 170, 0)',
     title: 'Trix',
     text: 'Tiefling Warlock',
+    initiative: 0,
+    dexterity: '+0',
   },
   {
-    color: 'rgb(0, 188, 212)',
     title: 'Fold',
     text: 'Human Warlock',
+    initiative: 0,
+    dexterity: '+0',
   },
 ];
 
@@ -82,6 +88,8 @@ class App extends Component {
 
     this.addPlayer = this.addPlayer.bind(this);
     this.loadPlayers = this.loadPlayers.bind(this);
+    this.sortPlayers = this.sortPlayers.bind(this);
+    this.updateInitiative = this.updateInitiative.bind(this);
   }
 
   addPlayer(player) {
@@ -109,6 +117,34 @@ class App extends Component {
     });
   }
 
+  sortPlayers() {
+    // sort by value
+    let initiativeOrderArray = this.state.players.concat().sort(function(a, b) {
+      return b.initiative - a.initiative;
+    });
+
+    this.setState({
+      players: initiativeOrderArray,
+    });
+  }
+
+  updateInitiative(initiative, player) {
+    console.log('Set ' + player.title + ' initiative to ' + initiative);
+
+    // Map the player array
+    const players = this.state.players.map(item => {
+      // If the item is the passed in player
+      if (item.title === player.title) {
+        // Update their initiative value
+        item.initiative = Number(initiative);
+      }
+      // Otherwise return as is
+      return item;
+    });
+
+    this.setState({ players });
+  }
+
   render() {
     return (
       <div className="App">
@@ -118,7 +154,11 @@ class App extends Component {
         <div className="container">
           <div className="column">
             <h1>Initiative</h1>
-            <List players={this.state.players} />
+            <List
+              players={this.state.players}
+              handleSort={this.sortPlayers}
+              handleInitiativeChange={this.updateInitiative}
+            />
           </div>
           <div className="column">
             <h1>Add Character</h1>

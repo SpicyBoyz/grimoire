@@ -1,40 +1,39 @@
 import React from 'react';
 
-import ReactDragList from 'react-drag-list';
-import 'react-drag-list/assets/index.css';
-
 import './List.css';
 
 class List extends React.Component {
-  _handleUpdate = (evt, updated) => {
-    console.log(evt); // tslint:disable-line
-    console.log(updated); // tslint:disable-line
-    // this.setState({
-    //   dataSource: [...updated, {
-    //     color: '#FFAA00',
-    //     title: 'Added Engineer',
-    //     text: 'Added Engineer',
-    //   }]
-    // })
-  };
+  constructor(props) {
+    super(props);
+    this.handleInitiativeChange = this.handleInitiativeChange.bind(this);
+  }
+
+  handleInitiativeChange(event, player) {
+    let initiative = event.target.value;
+
+    this.props.handleInitiativeChange(initiative, player);
+    event.preventDefault();
+  }
 
   render() {
     return (
-      <div className="simple">
-        <ReactDragList
-          dataSource={this.props.players}
-          rowKey="title"
-          row={(record, index) => (
-            <div key={index}>
-              <div className="player-name">{record.title}</div>
-              <span className="player-title">{record.text}</span>
-            </div>
-          )}
-          handles={false}
-          className="player-list"
-          rowClassName="player-item"
-          onUpdate={this._handleUpdate}
-        />
+      <div>
+        {this.props.players.map((player, index) => (
+          <div className="player-item" key={index}>
+            <div className="player-name">{player.title}</div>
+            <span className="player-title">{player.text}</span>
+            <form id="initiative">
+              <input
+                className="player-initiative"
+                type="text"
+                placeholder={player.dexterity}
+                value={player.initiative}
+                onChange={event => this.handleInitiativeChange(event, player)}
+              />
+            </form>
+          </div>
+        ))}
+        <button onClick={this.props.handleSort}>Sort</button>
       </div>
     );
   }
