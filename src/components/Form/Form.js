@@ -70,7 +70,7 @@ class Form extends React.Component {
             onChange={this.handleTermChange}
           />
         </form>
-        <button className="submit" onClick={this.handleClick}>
+        <button className="action-button" onClick={this.handleClick}>
           Add
         </button>
       </div>

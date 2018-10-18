@@ -21,21 +21,3 @@ input {
   box-sizing: border-box;
   font-size: 16px;
 }
-
-.circle-picker {
-  margin: 5px;
-  padding-bottom: 15px;
-}
-
-.submit {
-  outline: 0;
-  background: #4caf50;
-  width: 100%;
-  border: 0;
-  border-radius: 4px;
-  padding: 15px;
-  font-size: 1.2em;
-  font-weight: bold;
-  color: #ffffff;
-  cursor: pointer;
-}

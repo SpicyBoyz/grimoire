@@ -83,3 +83,10 @@ button {
   color: #ffffff;
   cursor: pointer;
 }
+
+.action-button {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.2em;
+  margin: 0;
+}
