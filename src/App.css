@@ -17,6 +17,13 @@ h1 {
   color: #5f6061;
 }
 
+@media (max-width: 400px) {
+  h1 {
+    font-size: 1.5em;
+    letter-spacing: 0;
+  }
+}
+
 h2 {
   font-family: 'deutsch_gothicnormal', Arial, sans-serif;
   font-size: 1.5em;
@@ -37,11 +44,19 @@ h2 {
   margin-top: 75px;
   display: flex;
   align-content: center;
-  justify-content: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 400px) {
+  .container {
+    width: 90%;
+    display: block;
+  }
 }
 
 .column {
   flex: 1;
+  padding: 0 7px;
   margin-bottom: 75px;
 }
 
@@ -67,4 +82,12 @@ button {
   font-weight: bold;
   color: #ffffff;
   cursor: pointer;
+}
+
+.action-button {
+  width: 100%;
+  display: block;
+  padding: 15px;
+  font-size: 1.2em;
+  margin: 0;
 }

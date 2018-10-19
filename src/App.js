@@ -41,16 +41,16 @@ const spicyBoyz = [
 
 const deaconsDecoys = [
   {
-    title: 'Eyrin',
+    title: 'Eyrin Tylith',
     text: 'Elf Bard',
     initiative: 0,
-    dexterity: '+3',
+    dexterity: '+4',
   },
   {
     title: 'Click',
     text: 'Kenku Cleric',
     initiative: 0,
-    dexterity: '+1',
+    dexterity: '+3',
   },
   {
     title: 'Höf Dawndew',
@@ -62,19 +62,19 @@ const deaconsDecoys = [
     title: 'Har Dawndew',
     text: 'Half-Orc Barbarian',
     initiative: 0,
-    dexterity: '+0',
+    dexterity: '+1',
   },
   {
     title: 'Trix',
     text: 'Tiefling Warlock',
     initiative: 0,
-    dexterity: '+0',
+    dexterity: '+1',
   },
   {
     title: 'Fold',
     text: 'Human Warlock',
     initiative: 0,
-    dexterity: '+0',
+    dexterity: '+2',
   },
 ];
 
