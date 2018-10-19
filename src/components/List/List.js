@@ -21,8 +21,10 @@ class List extends React.Component {
         <ul className="player-list">
           {this.props.players.map((player, index) => (
             <li className="player-item" key={index}>
-              <div className="player-name">{player.title}</div>
-              <span className="player-title">{player.text}</span>
+              <div class="player-info">
+                <div className="player-name">{player.title}</div>
+                <span className="player-title">{player.text}</span>
+              </div>
               <form id="initiative">
                 <input
                   className="player-initiative"
