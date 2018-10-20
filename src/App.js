@@ -174,10 +174,19 @@ class App extends Component {
             />
           </div>
           <div className="column">
+            <h1>Controls</h1>
+            <div className="card">
+              <button className="action-button" onClick={this.sortPlayers}>
+                Sort
+              </button>
+              <button className="action-button" onClick={this.advancePlayers}>
+                Next
+              </button>
+            </div>
             <h1>Add Character</h1>
             <Form addPlayer={this.addPlayer} />
 
-            <div className="quick-select">
+            <div className="card">
               <h2>Quick Select</h2>
               <div className="buttons">
                 <button onClick={this.loadPlayers}>Clear all</button>
