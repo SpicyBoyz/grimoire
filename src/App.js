@@ -176,19 +176,20 @@ class App extends Component {
           <div className="column">
             <h1>Controls</h1>
             <div className="card">
-              <button className="action-button" onClick={this.sortPlayers}>
-                Sort
-              </button>
-              <button className="action-button" onClick={this.advancePlayers}>
-                Next
-              </button>
-            </div>
-            <h1>Add Character</h1>
-            <Form addPlayer={this.addPlayer} />
-
-            <div className="card">
-              <h2>Quick Select</h2>
               <div className="buttons">
+                <button
+                  className="primary-button"
+                  onClick={this.advancePlayers}
+                >
+                  Next
+                </button>
+                <button className="primary-button" onClick={this.sortPlayers}>
+                  Sort
+                </button>
+              </div>
+
+              <div>
+                <h2>Quick Select</h2>
                 <button onClick={this.loadPlayers}>Clear all</button>
                 <button onClick={this.loadPlayers} value={spicyBoyz}>
                   Spicy Boyz
@@ -198,6 +199,9 @@ class App extends Component {
                 </button>
               </div>
             </div>
+
+            <h1>Add Character</h1>
+            <Form addPlayer={this.addPlayer} />
           </div>
         </div>
       </div>

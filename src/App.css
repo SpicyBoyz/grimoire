@@ -25,7 +25,6 @@ h1 {
 }
 
 h2 {
-  font-family: 'deutsch_gothicnormal', Arial, sans-serif;
   font-size: 1.5em;
   font-weight: bold;
   margin-bottom: 0.5em;
@@ -69,25 +68,33 @@ h2 {
 
 .buttons {
   display: flex;
+  justify-content: space-between;
+}
+
+.buttons button {
+  flex: 1;
+  margin-right: 15px;
 }
 
 button {
-  background: #4caf50;
+  background: #ffffff;
   outline: 0;
-  border: 0;
+  border: 1px solid #7a7a7a;
   border-radius: 4px;
   padding: 10px;
   margin-right: 10px;
   font-size: 1em;
-  font-weight: bold;
-  color: #ffffff;
+  color: #7a7a7a;
   cursor: pointer;
 }
 
-.action-button {
+.primary-button {
   width: 100%;
+  border: 0;
   display: block;
   padding: 15px;
-  margin-bottom: 15px;
+  margin: 0 0 15px 0;
   font-size: 1.2em;
+  background: #4caf50;
+  color: #ffffff;
 }
