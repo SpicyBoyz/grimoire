@@ -89,6 +89,7 @@ class App extends Component {
     this.addPlayer = this.addPlayer.bind(this);
     this.loadPlayers = this.loadPlayers.bind(this);
     this.sortPlayers = this.sortPlayers.bind(this);
+    this.advancePlayers = this.advancePlayers.bind(this);
     this.updateInitiative = this.updateInitiative.bind(this);
   }
 
@@ -128,6 +129,17 @@ class App extends Component {
     });
   }
 
+  advancePlayers() {
+    let initiativeOrderArray = this.state.players.concat();
+    let firstPlayer = initiativeOrderArray[0];
+    initiativeOrderArray.push(firstPlayer);
+    initiativeOrderArray.shift();
+
+    this.setState({
+      players: initiativeOrderArray,
+    });
+  }
+
   updateInitiative(initiative, player) {
     console.log('Set ' + player.title + ' initiative to ' + initiative);
 
@@ -157,6 +169,7 @@ class App extends Component {
             <List
               players={this.state.players}
               handleSort={this.sortPlayers}
+              handleAdvance={this.advancePlayers}
               handleInitiativeChange={this.updateInitiative}
             />
           </div>

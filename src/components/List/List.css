@@ -2,38 +2,38 @@
 }
 
 .player-item {
-    background: rgba(255, 255, 255, 1);
-    margin: 0 15px 15px 15px;
-    padding: 15px;
-    height: 49px;
-    opacity: 0.7;
-    border-radius: 4px;
-    box-shadow: 0px 2px 2px grey;
+  background: rgba(255, 255, 255, 1);
+  margin: 0 15px 15px 15px;
+  padding: 15px;
+  height: 49px;
+  opacity: 0.7;
+  border-radius: 4px;
+  box-shadow: 0px 2px 2px grey;
 }
 
 .player-name {
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-bottom: 7px;
-    color: #221e1f;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 7px;
+  color: #221e1f;
 }
 
 .player-title {
-    color: #5f6061;
+  color: #5f6061;
 }
 
 .player-info {
-    float: left;
+  float: left;
 }
 
 .player-initiative {
-    float: right;
-    width: 60px;
+  float: right;
+  width: 60px;
 }
 
 .current-turn {
-    font-size: 20px;
-    height: 60px;
-    margin: 0 0 15px 0;
-    opacity: 1;
+  font-size: 20px;
+  height: 60px;
+  margin: 0 0 15px 0;
+  opacity: 1;
 }
