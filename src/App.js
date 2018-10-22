@@ -89,6 +89,7 @@ class App extends Component {
     this.addPlayer = this.addPlayer.bind(this);
     this.loadPlayers = this.loadPlayers.bind(this);
     this.sortPlayers = this.sortPlayers.bind(this);
+    this.advancePlayers = this.advancePlayers.bind(this);
     this.updateInitiative = this.updateInitiative.bind(this);
   }
 
@@ -128,6 +129,17 @@ class App extends Component {
     });
   }
 
+  advancePlayers() {
+    let initiativeOrderArray = this.state.players.concat();
+    let firstPlayer = initiativeOrderArray[0];
+    initiativeOrderArray.push(firstPlayer);
+    initiativeOrderArray.shift();
+
+    this.setState({
+      players: initiativeOrderArray,
+    });
+  }
+
   updateInitiative(initiative, player) {
     console.log('Set ' + player.title + ' initiative to ' + initiative);
 
@@ -157,16 +169,27 @@ class App extends Component {
             <List
               players={this.state.players}
               handleSort={this.sortPlayers}
+              handleAdvance={this.advancePlayers}
               handleInitiativeChange={this.updateInitiative}
             />
           </div>
           <div className="column">
-            <h1>Add Character</h1>
-            <Form addPlayer={this.addPlayer} />
-
-            <div className="quick-select">
-              <h2>Quick Select</h2>
+            <h1>Controls</h1>
+            <div className="card">
               <div className="buttons">
+                <button
+                  className="primary-button"
+                  onClick={this.advancePlayers}
+                >
+                  Next
+                </button>
+                <button className="primary-button" onClick={this.sortPlayers}>
+                  Sort
+                </button>
+              </div>
+
+              <div>
+                <h2>Quick Select</h2>
                 <button onClick={this.loadPlayers}>Clear all</button>
                 <button onClick={this.loadPlayers} value={spicyBoyz}>
                   Spicy Boyz
@@ -176,6 +199,9 @@ class App extends Component {
                 </button>
               </div>
             </div>
+
+            <h1>Add Character</h1>
+            <Form addPlayer={this.addPlayer} />
           </div>
         </div>
       </div>
