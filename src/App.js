@@ -81,6 +81,8 @@ const deaconsDecoys = [
 class App extends Component {
   constructor(props) {
     super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.input = React.createRef();
 
     this.state = {
       players: deaconsDecoys,
@@ -91,6 +93,40 @@ class App extends Component {
     this.sortPlayers = this.sortPlayers.bind(this);
     this.advancePlayers = this.advancePlayers.bind(this);
     this.updateInitiative = this.updateInitiative.bind(this);
+  }
+
+  async handleSubmit(event) {
+    event.preventDefault();
+
+    const characterURL = this.input.current.value;
+    console.log('A character url was submitted: ' + characterURL);
+    this.input.current.value = '';
+
+    // TODO: better error checking for URLs, and a better way to deal with CORS?
+    const response = await window.fetch(`https://cors-anywhere.herokuapp.com/${characterURL}/json`);
+    const json = await response.json();
+    
+    const characterRequests = json.campaign.characters.map(async character => {
+      const response = await window.fetch(`https://cors-anywhere.herokuapp.com/https://www.dndbeyond.com/character/${character.characterId}/json`);
+      return await response.json();
+    });
+    const characters = await Promise.all(characterRequests);
+    console.log(characters);
+
+    const players = characters.map(character => {
+      const className = character.classes
+        .map(classObject => classObject.definition.name)
+        .join('/');
+      
+      return {
+        title: character.name,
+        text: `${character.race.fullName} ${className}`,
+        initiative: 0,
+        dexterity: '',
+      }
+    });
+
+    this.setState({ players });
   }
 
   addPlayer(player) {
@@ -176,7 +212,7 @@ class App extends Component {
           <div className="column">
             <h1>Controls</h1>
             <div className="card">
-              <div className="buttons">
+              <div className="buttons u-mb-15">
                 <button
                   className="primary-button"
                   onClick={this.advancePlayers}
@@ -188,15 +224,23 @@ class App extends Component {
                 </button>
               </div>
 
-              <div>
+              <div className="u-mb-15">
                 <h2>Quick Select</h2>
                 <button onClick={this.loadPlayers}>Clear all</button>
                 <button onClick={this.loadPlayers} value={spicyBoyz}>
                   Spicy Boyz
                 </button>
                 <button onClick={this.loadPlayers} value={deaconsDecoys}>
-                  Deacon's Decoys
+                  Deekin's Decoys
                 </button>
+              </div>
+
+              <div className="u-mb-15">
+                <h2>Import Character from URL</h2>
+                <form onSubmit={this.handleSubmit}>
+                  <input type="text" placeholder="Character URL" ref={this.input}/>
+                  <button type="submit" className="primary-button">Submit</button>
+                </form>
               </div>
             </div>
 
