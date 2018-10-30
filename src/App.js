@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+
 import './reset.css';
 import './fonts/stylesheet.css';
 import './App.css';
 
 import List from './components/List/List';
 import Form from './components/Form/Form';
+import Router from './components/Router/Router';
 
 const spicyBoyz = [
   {
@@ -162,6 +164,7 @@ class App extends Component {
       <div className="App">
         <div className="title">
           <h1>Grimoire</h1>
+          <Router />
         </div>
         <div className="container">
           <div className="column">
