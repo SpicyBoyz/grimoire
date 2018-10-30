@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-const Initiative = () => <h2>Take Initiative</h2>;
+import TakeInitiative from '../TakeInitiative/TakeInitiative';
 const Bones = () => <h2>Roll the Bones</h2>;
 
 const AppRouter = () => (
@@ -10,7 +10,7 @@ const AppRouter = () => (
       <nav>
         <ul>
           <li>
-            <Link to="/take-iniative">Take Initiative</Link>
+            <Link to="/take-initiative">Take Initiative</Link>
           </li>
           <li>
             <Link to="/roll-the-bones">Roll The Bones</Link>
@@ -18,7 +18,7 @@ const AppRouter = () => (
         </ul>
       </nav>
 
-      <Route path="/take-initiative" component={Initiative} />
+      <Route path="/take-initiative" component={TakeInitiative} />
       <Route path="/roll-the-bones" component={Bones} />
     </div>
   </Router>
