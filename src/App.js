@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
-import Router from './components/Router/Router';
+import Main from './components/Main/Main';
+import Navigation from './components/Navigation/Navigation';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className="App">
-        <div className="">
+        <div className="title">
           <h1>Grimoire</h1>
-          <Router />
+          <Navigation />
         </div>
+        <Main />
       </div>
     );
   }

@@ -1,0 +1,15 @@
+nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav li {
+  padding: 15px;
+  font-size: 27px;
+  font-weight: bold;
+}
+
+nav li a {
+  text-decoration: none;
+  color: #ffffff;
+}

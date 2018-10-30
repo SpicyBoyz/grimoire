@@ -9,17 +9,17 @@ body {
 
 h1 {
   font-family: 'deutsch_gothicnormal', Arial, sans-serif;
-  font-size: 45px;
+  font-size: 2.5em;
   font-weight: bold;
   letter-spacing: 0.1rem;
   line-height: 0.5em;
-  margin: 0.8em 0;
+  margin: 27px 0;
   color: #5f6061;
 }
 
 @media (max-width: 400px) {
   h1 {
-    font-size: 27px;
+    font-size: 1.5em;
     letter-spacing: 0;
   }
 }
@@ -31,16 +31,18 @@ h2 {
   color: rgba(0, 0, 0, 0.3);
 }
 
-.title {
-  font-size: 3em;
-  text-align: center;
+.App {
+  margin-top: 75px;
+}
+
+.page {
+  margin-top: 50px;
 }
 
 .container {
   width: 70%;
   max-width: 960px;
   margin: 0 auto;
-  margin-top: 75px;
   display: flex;
   align-content: center;
   justify-content: space-between;
@@ -51,6 +53,11 @@ h2 {
     width: 90%;
     display: block;
   }
+}
+
+.title {
+  font-size: 3em;
+  text-align: center;
 }
 
 .column {
