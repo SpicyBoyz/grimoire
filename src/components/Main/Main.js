@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import TakeInitiative from '../TakeInitiative/TakeInitiative';
 
-const RollTheBones = () => <h2 className="title">Coming Soon!</h2>;
+const RollTheBones = () => <h2 className="title page">Coming Soon!</h2>;
 
 const Main = () => (
   <main>
