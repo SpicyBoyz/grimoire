@@ -202,12 +202,11 @@ class TakeInitiative extends Component {
 
               <div>
                 <h2>Quick Select</h2>
-                <button onClick={this.loadPlayers}>Clear all</button>
-                <button onClick={this.loadPlayers} value={spicyBoyz}>
-                  Spicy Boyz
-                </button>
                 <button onClick={this.loadPlayers} value={deaconsDecoys}>
                   Deacon's Decoys
+                </button>
+                <button onClick={this.loadPlayers} value={spicyBoyz}>
+                  Spicy Boyz
                 </button>
               </div>
             </div>
