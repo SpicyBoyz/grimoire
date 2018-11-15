@@ -27,7 +27,7 @@ h1 {
 h2 {
   font-size: 1.5em;
   font-weight: bold;
-  margin-bottom: 0.5em;
+  margin: 15px 0;
   color: rgba(0, 0, 0, 0.3);
 }
 
@@ -67,7 +67,7 @@ h2 {
 }
 
 .card {
-  margin-bottom: 15px;
+  margin-bottom: 60px;
   padding: 15px;
   background: #ffffff;
   border-radius: 4px;
@@ -80,6 +80,9 @@ h2 {
 
 .buttons button {
   flex: 1;
+}
+
+.buttons button:not(:last-child) {
   margin-right: 15px;
 }
 
@@ -88,7 +91,7 @@ button {
   outline: 0;
   border: 1px solid #7a7a7a;
   border-radius: 4px;
-  padding: 10px;
+  padding: 15px 30px;
   margin-right: 10px;
   font-size: 1em;
   color: #7a7a7a;
@@ -105,9 +108,9 @@ button:hover {
   width: 100%;
   border: 0;
   display: block;
-  padding: 15px;
-  margin: 0 0 15px 0;
+  margin: 0;
   font-size: 1.2em;
+  font-weight: bold;
   background: #4caf50;
   color: #ffffff;
 }
