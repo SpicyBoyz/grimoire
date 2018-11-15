@@ -21,8 +21,13 @@ class List extends React.Component {
         {this.props.players.map((player, index) => (
           <li
             className={'player-item ' + (index === 0 ? 'current-turn' : '')}
-            key={index}
-          >
+            key={index}>
+            <button
+              onClick={this.props.removePlayer}
+              className="remove-button"
+              value={index}>
+              X
+            </button>
             <div className="player-info">
               <div className="player-name">{player.title}</div>
               <span className="player-title">{player.text}</span>

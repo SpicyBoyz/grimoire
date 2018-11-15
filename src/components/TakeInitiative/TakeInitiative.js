@@ -88,6 +88,7 @@ class TakeInitiative extends Component {
     };
 
     this.addPlayer = this.addPlayer.bind(this);
+    this.removePlayer = this.removePlayer.bind(this);
     this.loadPlayers = this.loadPlayers.bind(this);
     this.sortPlayers = this.sortPlayers.bind(this);
     this.advancePlayers = this.advancePlayers.bind(this);
@@ -98,6 +99,16 @@ class TakeInitiative extends Component {
     this.setState({
       players: [...this.state.players, player],
     });
+  }
+
+  removePlayer(event) {
+    let playerArray = [...this.state.players];
+    let index = event.target.value;
+    if (index !== -1) {
+      playerArray.splice(index, 1);
+      console.log('Removing item at index ' + index);
+      this.setState({ players: playerArray });
+    }
   }
 
   loadPlayers(event) {
@@ -131,6 +142,7 @@ class TakeInitiative extends Component {
   }
 
   advancePlayers() {
+    // Concat creates a new arroy for us instead of a reference
     let initiativeOrderArray = this.state.players.concat();
     let firstPlayer = initiativeOrderArray[0];
     initiativeOrderArray.push(firstPlayer);
@@ -166,6 +178,7 @@ class TakeInitiative extends Component {
             <h1>Initiative</h1>
             <List
               players={this.state.players}
+              removePlayer={this.removePlayer}
               handleSort={this.sortPlayers}
               handleAdvance={this.advancePlayers}
               handleInitiativeChange={this.updateInitiative}
@@ -177,8 +190,7 @@ class TakeInitiative extends Component {
               <div className="buttons">
                 <button
                   className="primary-button"
-                  onClick={this.advancePlayers}
-                >
+                  onClick={this.advancePlayers}>
                   Next
                 </button>
                 <button className="primary-button" onClick={this.sortPlayers}>
