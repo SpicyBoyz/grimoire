@@ -109,6 +109,8 @@ class TakeInitiative extends Component {
       console.log('Removing item at index ' + index);
       this.setState({ players: playerArray });
     }
+
+    event.preventDefault();
   }
 
   loadPlayers(event) {

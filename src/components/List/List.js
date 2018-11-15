@@ -22,12 +22,6 @@ class List extends React.Component {
           <li
             className={'player-item ' + (index === 0 ? 'current-turn' : '')}
             key={index}>
-            <button
-              onClick={this.props.removePlayer}
-              className="remove-button"
-              value={index}>
-              X
-            </button>
             <div className="player-info">
               <div className="player-name">{player.title}</div>
               <span className="player-title">{player.text}</span>
@@ -41,6 +35,12 @@ class List extends React.Component {
                 onChange={event => this.handleInitiativeChange(event, player)}
               />
             </form>
+            <button
+              onClick={this.props.removePlayer}
+              className="remove"
+              value={index}>
+              -
+            </button>
           </li>
         ))}
       </ul>

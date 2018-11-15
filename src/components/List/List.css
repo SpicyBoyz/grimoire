@@ -11,6 +11,11 @@
   box-shadow: 0px 2px 2px grey;
 }
 
+.player-item:hover > .remove {
+  opacity: 1;
+  transition: 0.1;
+}
+
 .player-name {
   font-size: 1.5em;
   font-weight: bold;
@@ -38,6 +43,15 @@
   opacity: 1;
 }
 
-.remove-button {
-  float: left;
+.remove {
+  display: block;
+  float: right;
+  left: 0px;
+  top: 10px;
+  opacity: 0;
+  border-radius: 100px;
+}
+
+.remove:hover {
+  opacity: 1;
 }
